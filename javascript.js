@@ -216,6 +216,7 @@
     if (cartItems[productId] < 0) {
       cartItems[productId] = 0;
     }
+    saveCartLocally();
     updateCartDisplay();
   }
 
@@ -335,6 +336,7 @@
       Object.keys(cartItems).forEach(function (productId) {
         cartItems[productId] = 0;
       });
+      saveCartLocally();
       updateCartDisplay();
     });
   }
