@@ -11,6 +11,11 @@
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /\d/g;
 
+    // toastr
+    // Reference: https://www.npmjs.com/package/toastr
+    toastr.options.positionClass = "toast-bottom-center";
+    toastr.options.closeButton = true;
+    
     // Take the container id and error message, display it
     function setError(id, message) {
     const errorElement = document.getElementById(id);
@@ -268,6 +273,7 @@
       removeBtn.addEventListener("click", function () {
         removeFromCart(info.id);
         toastr.info("Removed item from cart");
+        // Not actually checking if an item was removed here, but this was the 417 final's logic and not part of 418 requirements
       });
     }
   });
