@@ -20,3 +20,12 @@ Checked my installation of jquery and popup.
 Realized that I forgot to include links to the js files in the HTML (and to the toastr css)
 ### What I learned 
 (Relearned :P) After installing with npm, don't forget to actually connect what you downloaded to your project.
+
+### Problem 2
+None of the add/remove buttons worked.
+### What I tried 
+This wasn't hard to find the root issue of, there's not a lot of code in here to debug.
+### What fixed it
+When implemented localStorage, I did not have a case to set the cartItem container to an empty object if the storage key was not present yet.
+### What I learned 
+Make sure that logic is built in around not finding appropriate storage keys.

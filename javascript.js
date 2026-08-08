@@ -167,7 +167,8 @@
   initTheme();
 
   // Cart logic
-  const cartItems = {};
+  const CART_KEY = "cartItems";
+  const cartItems = JSON.parse(localStorage.getItem(CART_KEY)) || {};
   const SHIPPING = 7.0;
   const TAX = 0.085; // 8.5% tax
 
@@ -190,6 +191,11 @@
     return { id: id, name: name, price: isNaN(price) ? 0 : price };
   }
 
+  // Save contents of cart to persist between sessions
+  function saveCartLocally(){
+    localStorage.setItem(CART_KEY, JSON.stringify(cartItems));
+  }
+
 
   // Increment product in cart
   function addToCart(productId) {
@@ -198,6 +204,7 @@
       cartItems[productId] = 0;
     }
     cartItems[productId] += 1;
+    saveCartLocally();
     updateCartDisplay();
   }
 
