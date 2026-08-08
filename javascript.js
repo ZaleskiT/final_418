@@ -15,7 +15,7 @@
     // Reference: https://www.npmjs.com/package/toastr
     toastr.options.positionClass = "toast-bottom-center";
     toastr.options.closeButton = true;
-    
+
     // Take the container id and error message, display it
     function setError(id, message) {
     const errorElement = document.getElementById(id);
@@ -205,6 +205,7 @@
   function removeFromCart(productId) {
     if (!productId || !cartItems[productId]) return;
     cartItems[productId] -= 1;
+    toastr.info("Removed item from cart");
     if (cartItems[productId] < 0) {
       cartItems[productId] = 0;
     }
@@ -272,8 +273,6 @@
     if (removeBtn) {
       removeBtn.addEventListener("click", function () {
         removeFromCart(info.id);
-        toastr.info("Removed item from cart");
-        // Not actually checking if an item was removed here, but this was the 417 final's logic and not part of 418 requirements
       });
     }
   });
