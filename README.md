@@ -6,6 +6,9 @@ I did not use generative AI tools for this project. I used only approved course 
 
 ## Development Log 
 ### Day 1 
+- Started with GIT 417 final project as a baseline
+- Installed jQuery
+- Landed on toastr for my jQuery widget/plugin, installed and tested
 
 ## Debugging Log
 ### Problem 1 
