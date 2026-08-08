@@ -173,7 +173,6 @@
   const cartShipping = document.getElementById("cart-shipping");
   const cartTotal = document.getElementById("cart-total");
   const checkoutBtn = document.getElementById("checkout-btn");
-  const checkoutMessage = document.getElementById("checkout-message");
 
   function getProductInfo(card) {
     const id = card.getAttribute("product-id");
@@ -276,7 +275,6 @@
   // Check out
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", function () {
-      if (!checkoutMessage) return;
 
       // Make sure there is at least one item in the cart
       let hasItems = false;
@@ -297,8 +295,7 @@
       });
 
       if (!hasItems) {
-        checkoutMessage.textContent =
-          "Please add at least one item to the cart before checking out.";
+        toastr.warning("Please add at least one item to the cart before checking out.");
         return;
       }
 
@@ -307,7 +304,7 @@
       const shippingText = document.getElementById("cart-shipping")?.textContent || "$0.00";
       const totalText = document.getElementById("cart-total")?.textContent || "$0.00";
 
-      checkoutMessage.innerHTML =
+      let orderMsg =
         "You ordered: <strong>" +
         summaryLines.join(", ") +
         "</strong>.<br>" +
@@ -320,6 +317,7 @@
         "<br><strong>Total: " +
         totalText +
         "</strong>";
+        toastr.success(orderMsg);
 
       // Remove all items from cart, there has been a checkout
       Object.keys(cartItems).forEach(function (productId) {
