@@ -261,18 +261,14 @@
     if (addBtn) {
       addBtn.addEventListener("click", function () {
         addToCart(info.id);
-        if (checkoutMessage) {
-          checkoutMessage.textContent = "";
-        }
+        toastr.success("Added item to cart");
       });
     }
 
     if (removeBtn) {
       removeBtn.addEventListener("click", function () {
         removeFromCart(info.id);
-        if (checkoutMessage) {
-          checkoutMessage.textContent = "";
-        }
+        toastr.info("Removed item from cart");
       });
     }
   });
