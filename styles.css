@@ -131,6 +131,14 @@ body.dark-theme {
   color: var(--color-text-muted);
 }
 
+/* Carousel */
+
+.carousel-container img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
 /* Two-column template */
 
 .two-column {

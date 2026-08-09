@@ -16,6 +16,19 @@
     toastr.options.positionClass = "toast-bottom-center";
     toastr.options.closeButton = true;
 
+    // slick (carousel)
+    $('.carousel-container').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+      });
+      
     // Take the container id and error message, display it
     function setError(id, message) {
     const errorElement = document.getElementById(id);
