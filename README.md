@@ -11,6 +11,15 @@ I did not use generative AI tools for this project. I used only approved course 
 - Landed on toastr for my jQuery widget/plugin, installed and tested
 - Started localStorage persisting cart contents, switching from previous system
 
+### Day 2
+- Installed slick (carousel)
+- Reverted jQuery to 3.7.1 to accomodate slick
+
+### Day 3
+- Tested Discord API
+- Added the three pieces of information from the no-auth public API for our server
+- Randomly grab three online users and display their names
+
 ## Debugging Log
 ### Problem 1 
 The toastr popup did not appear.
