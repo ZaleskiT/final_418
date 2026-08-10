@@ -11,6 +11,24 @@
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /\d/g;
 
+    // Discord API
+    // https://discord.com/developers/docs/resources/guild
+    const GUILD_ID = "984968733699231754";
+    let url = `https://discord.com/api/guilds/${GUILD_ID}/widget.json`;
+
+    fetch(url) 
+      .then(function(response){
+      console.log("response");
+      console.log(response);
+      return response.json();
+    })
+      .then(function(json){
+        console.log(json);
+    })
+      .catch(function(error){
+      console.error(error.message);
+    });
+
     // toastr
     // Reference: https://www.npmjs.com/package/toastr
     toastr.options.positionClass = "toast-bottom-center";
