@@ -17,6 +17,7 @@
     const discordMemberCount = $("#discord-member-count");
     const discordName = $("#discord-name");
     const discordStatus = $("#discord-status");
+    const discordMembers = $("#discord-members");
     let url = `https://discord.com/api/guilds/${GUILD_ID}/widget.json`;
 
     fetch(url) 
@@ -31,6 +32,22 @@
         discordName[0].textContent = json.name + " Discord Server: ";
         discordMemberCount[0].textContent = json.presence_count + " members are online.";
 
+        const membersPool = json.members;
+        let membersStr = "Chat with online members such as ";
+        // This would be unusual, but possible to have less than three members online
+        if (membersPool.length >= 3){
+        for (let i = 0; i < 3; i++){
+            const index = Math.floor(Math.random() * membersPool.length);
+            membersStr += membersPool[index].username;
+            if (i == 0){
+              membersStr += ", "
+            } else if (i == 1) {
+              membersStr += ", and "
+            }
+          }
+
+          discordMembers[0].textContent = membersStr;
+        }
     })
       .catch(function(error){
       console.error(error.message);
