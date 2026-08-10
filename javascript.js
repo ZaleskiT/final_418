@@ -18,12 +18,15 @@
 
     fetch(url) 
       .then(function(response){
-      console.log("response");
-      console.log(response);
+      if (!response.ok) {
+        console.log("Discord connection failed");
+      }
       return response.json();
     })
       .then(function(json){
-        console.log(json);
+        console.log(json.name);
+        console.log(json.channels);
+        console.log(json.presence_count);
     })
       .catch(function(error){
       console.error(error.message);
