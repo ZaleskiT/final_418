@@ -133,8 +133,12 @@ body.dark-theme {
 
 /* Carousel */
 
+.carousel-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .carousel-container img {
-  height: 400px;
   width: 100%;
   object-fit: cover;
 }
