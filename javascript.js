@@ -14,6 +14,7 @@
     // Discord API
     // https://discord.com/developers/docs/resources/guild
     const GUILD_ID = "984968733699231754";
+    const discordMemberCount = $("#discord-member-count");
     let url = `https://discord.com/api/guilds/${GUILD_ID}/widget.json`;
 
     fetch(url) 
@@ -27,6 +28,9 @@
         console.log(json.name);
         console.log(json.channels);
         console.log(json.presence_count);
+        console.log(discordMemberCount);
+        discordMemberCount[0].textContent = json.presence_count + " members are online.";
+        console.log(discordMemberCount);
     })
       .catch(function(error){
       console.error(error.message);
