@@ -380,3 +380,17 @@ textarea:focus {
 .btn-full {
   width: 100%;
 }
+
+/* A small circle for displaying connection status */
+.discord-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  background-color: #e74c3c;
+}
+
+.discord-status.online {
+  background-color: #2ecc71;
+}
