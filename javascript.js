@@ -14,7 +14,7 @@
     // Discord API
     // https://discord.com/developers/docs/resources/guild
     const GUILD_ID = "984968733699231754";
-    const discordMemberCount = $("#discord-member-count");
+    //const discordMemberCount = $("#discord-member-count");
     const discordName = $("#discord-name");
     const discordStatus = $("#discord-status");
     const discordMembers = $("#discord-members");
@@ -30,7 +30,7 @@
       .then(function(json){
         discordStatus[0].classList.add("online");
         discordName[0].textContent = json.name + " Discord Server: ";
-        discordMemberCount[0].textContent = json.presence_count + " members are online.";
+        //discordMemberCount[0].textContent = json.presence_count + " members are online.";
 
         const membersPool = json.members;
         let membersStr = "Chat with online members such as ";
